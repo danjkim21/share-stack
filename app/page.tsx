@@ -1,6 +1,6 @@
-import AuthButton from "../components/AuthButton";
-import Header from "@/components/Header";
-import { cookies } from "next/headers";
+import AuthButton from '../components/AuthButton';
+import Header from '@/components/Header';
+import { cookies } from 'next/headers';
 
 export default async function Index() {
   const cookieStore = cookies();
@@ -23,7 +23,7 @@ export default async function Index() {
 
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
-          Built and Maintained by{" "}
+          Built and Maintained by{' '}
           <a
             href="https://www.github.com/danjkim21"
             target="_blank"
