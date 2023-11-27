@@ -3,6 +3,7 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ');
@@ -16,8 +17,9 @@ const user = {
 };
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', current: true },
-  { name: 'Explorer', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
+  { name: 'Explorer', href: '/explorer', current: false },
+  { name: 'My Stacks', href: '/stacks', current: false },
+  { name: 'My Groups', href: '/groups', current: false },
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -43,7 +45,7 @@ function Nav() {
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
@@ -55,7 +57,7 @@ function Nav() {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -97,7 +99,7 @@ function Nav() {
                         {userNavigation.map((item) => (
                           <Menu.Item key={item.name}>
                             {({ active }) => (
-                              <a
+                              <Link
                                 href={item.href}
                                 className={classNames(
                                   active ? 'bg-gray-100' : '',
@@ -105,7 +107,7 @@ function Nav() {
                                 )}
                               >
                                 {item.name}
-                              </a>
+                              </Link>
                             )}
                           </Menu.Item>
                         ))}

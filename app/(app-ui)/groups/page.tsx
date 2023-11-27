@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import HeaderStacked from '@/components/header-stacked';
 
-export default async function Dashboard() {
+export default async function Groups() {
   const cookieStore = cookies();
   const supabase = createClient(cookieStore);
 
@@ -14,9 +14,9 @@ export default async function Dashboard() {
 
   return (
     <>
-      <HeaderStacked title="Dashboard" />
+      <HeaderStacked title="Groups" />
       <main>
-        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8"></div>
+        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">test</div>
       </main>
     </>
   );
