@@ -22,8 +22,8 @@ const navigation = [
   { name: 'My Groups', href: '/groups', current: false },
 ];
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
+  { name: 'Your Profile', href: '/profile' },
+  { name: 'Settings', href: '/settings' },
   { name: 'Sign out', href: '#' },
 ];
 
