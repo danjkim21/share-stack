@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import HeaderStacked from '@/components/header-stacked';
+import StackList from '@/components/stack-list';
 
 export default async function Stacks() {
   const cookieStore = cookies();
@@ -16,7 +17,9 @@ export default async function Stacks() {
     <>
       <HeaderStacked title="Stacks" />
       <main>
-        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">test</div>
+        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+          <StackList />
+        </div>
       </main>
     </>
   );
