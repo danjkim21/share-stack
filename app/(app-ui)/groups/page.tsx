@@ -1,5 +1,4 @@
 import { createClient } from '@/utils/supabase/server';
-import Link from 'next/link';
 import { cookies } from 'next/headers';
 import HeaderStacked from '@/components/header-stacked';
 import GroupList from '@/components/group-list';

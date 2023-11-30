@@ -17,7 +17,7 @@ function GroupList({ groups }: GroupListPropsInterface) {
               </p>
             </div>
           </div>
-          <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+          <div className="shrink-0 sm:flex sm:flex-col sm:items-end sm:justify-center">
             <div className="flex -space-x-1 overflow-hidden">
               <img
                 className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
