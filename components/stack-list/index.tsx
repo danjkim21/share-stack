@@ -29,7 +29,7 @@ const filters = [
 
 const stacks = [
   {
-    name: 'Desk and Office',
+    name: 'Tech & Gadgets',
     description: 'Work from home accessories',
     imageSrc:
       'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
@@ -39,8 +39,8 @@ const stacks = [
     tags: ['tag 1', 'tag 2'],
   },
   {
-    name: 'Self-Improvement',
-    description: 'Journals and note-taking',
+    name: 'Books',
+    description: 'Sci-fi and Fantasty',
     imageSrc:
       'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
     imageAlt:
