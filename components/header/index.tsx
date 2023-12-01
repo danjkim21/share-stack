@@ -1,16 +1,18 @@
 export default function Header() {
   return (
-    <div className="flex flex-col gap-16 items-center">
-      <div className="flex gap-8 justify-center items-center">
+    <div className="flex flex-col items-center gap-16">
+      <div className="flex items-center justify-center gap-8">
         {/* App Icons or Hero Image */}
       </div>
-      <h1 className="sr-only">shareStack Home</h1>
-      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
+      <h1 className="text mx-auto max-w-xl text-center text-4xl tracking-tighter lg:text-5xl">
+        shareStack
+      </h1>
+      <p className="mx-auto max-w-xl text-center text-3xl !leading-tight lg:text-4xl">
         {/* Hero Section Text */}
         Your <span className="font-bold">preferred</span> digital content
         sharing app
       </p>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
+      <div className="my-8 w-full bg-gradient-to-r from-transparent via-foreground/10 to-transparent p-[1px]" />
     </div>
   );
 }
