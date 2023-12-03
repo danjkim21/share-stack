@@ -1,4 +1,3 @@
-import HeaderStacked from '@/components/header-stacked';
 import Nav from '@/components/nav';
 import '../styles/globals.css';
 

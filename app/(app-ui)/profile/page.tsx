@@ -1,15 +1,27 @@
+import { createClient } from '@/utils/supabase/server';
 import {
   BriefcaseIcon,
-  CalendarIcon,
-  CurrencyDollarIcon,
   LinkIcon,
   MapPinIcon,
   PencilIcon,
 } from '@heroicons/react/20/solid';
+import { cookies } from 'next/headers';
 
-export default function Profile() {
+async function Profile() {
+  // const cookieStore = cookies();
+  // const supabase = createClient(cookieStore);
+
+  // const {
+  //   data: { user },
+  // } = await supabase.auth.getUser();
+
+  // let { data: profile, error } = await supabase
+  //   .from('profile')
+  //   .select('*')
+  //   .eq('id', user?.id);
+
   return (
-    <div className="lg:flex lg:items-center lg:justify-between mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-8">
       <div className="min-w-0 flex-1">
         <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
           User Name
@@ -61,3 +73,5 @@ export default function Profile() {
     </div>
   );
 }
+
+export default Profile;
