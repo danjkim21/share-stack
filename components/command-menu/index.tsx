@@ -78,38 +78,45 @@ function CommandMenu({}: CommandMenuInterfaceProps) {
                 <form>
                   <div className="">
                     <input
-                      className="focus:shadow-outline w-full appearance-none  px-3 py-3 leading-tight text-gray-700 shadow focus:outline-none"
+                      className="focus:shadow-outline w-full appearance-none  border-transparent px-3 py-3 leading-tight text-gray-700 shadow ring-transparent focus:outline-none"
                       id="command"
                       type="text"
                       placeholder="Create a ..."
                     />
                   </div>
-                </form>
 
-                <div className="my-4">
-                  {objectType.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative mx-1 flex items-center gap-x-2 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-6 w-8 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="flex-auto">
-                        <a
-                          // href={item.href}
-                          className="block text-gray-700"
+                  <div className="my-4">
+                    {objectType.map((item) => (
+                      <label
+                        key={item.name}
+                        htmlFor={item.name}
+                        className="mr-auto"
+                      >
+                        <div
+                          key={item.name}
+                          className="group relative mx-1 flex items-center gap-x-2 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
                         >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                          <div className="flex h-6 w-8 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                            <item.icon
+                              className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <div className="flex flex-auto items-center">
+                            {item.name}
+                            <input
+                              type="radio"
+                              id={item.name}
+                              name={item.name}
+                              className="ml-auto h-4
+                            w-4 border-gray-300 "
+                            />
+                          </div>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                </form>
               </Dialog.Panel>
             </Transition.Child>
           </div>
