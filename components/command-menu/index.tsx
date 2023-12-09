@@ -1,9 +1,29 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
+import {
+  DocumentIcon,
+  Square3Stack3DIcon,
+  UserGroupIcon,
+} from '@heroicons/react/24/outline';
 import { useEffect, useState, Fragment } from 'react';
 
 interface CommandMenuInterfaceProps {}
+
+const objectType = [
+  {
+    name: 'Item',
+    icon: DocumentIcon,
+  },
+  {
+    name: 'Stack',
+    icon: Square3Stack3DIcon,
+  },
+  {
+    name: 'Group',
+    icon: UserGroupIcon,
+  },
+];
 
 function CommandMenu({}: CommandMenuInterfaceProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +60,7 @@ function CommandMenu({}: CommandMenuInterfaceProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black/25" />
+          <div className="fixed inset-0 bg-white/25 backdrop-blur-sm" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -54,18 +74,41 @@ function CommandMenu({}: CommandMenuInterfaceProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-white p-3 text-left align-middle shadow-xl transition-all">
-                <Dialog.Title
-                  as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
-                >
-                  Payment successful
-                </Dialog.Title>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    Your payment has been successfully submitted. We’ve sent you
-                    an email with all of the details of your order.
-                  </p>
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg border border-gray-200 bg-white text-left align-middle shadow-xl transition-all">
+                <form>
+                  <div className="">
+                    <input
+                      className="focus:shadow-outline w-full appearance-none  px-3 py-3 leading-tight text-gray-700 shadow focus:outline-none"
+                      id="command"
+                      type="text"
+                      placeholder="Create a ..."
+                    />
+                  </div>
+                </form>
+
+                <div className="my-4">
+                  {objectType.map((item) => (
+                    <div
+                      key={item.name}
+                      className="group relative mx-1 flex items-center gap-x-2 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
+                    >
+                      <div className="flex h-6 w-8 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <item.icon
+                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="flex-auto">
+                        <a
+                          // href={item.href}
+                          className="block text-gray-700"
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </Dialog.Panel>
             </Transition.Child>
