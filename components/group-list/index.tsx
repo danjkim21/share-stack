@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import AvatarGroup from '../avatar-group';
 
 interface GroupListPropsInterface {
@@ -11,9 +12,15 @@ function GroupList({ groups }: GroupListPropsInterface) {
         <li key={group.email} className="flex justify-between gap-x-6 py-5">
           <div className="flex min-w-0 gap-x-4">
             <div className="min-w-0 flex-auto">
-              <p className="text-sm font-semibold leading-6 text-gray-900">
+              <Link
+                // Add groups backend
+                href={`/groups/${groups.id}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-semibold leading-6 text-gray-900 hover:underline"
+              >
                 {group.groupName}
-              </p>
+              </Link>
               <p className="mt-1 truncate text-xs leading-5 text-gray-500">
                 {group.name}
               </p>
