@@ -29,6 +29,7 @@ const filters = [
 
 const stacks = [
   {
+    id: '12',
     name: 'Tech & Gadgets',
     description: 'Work from home accessories',
     imageSrc:
@@ -39,6 +40,7 @@ const stacks = [
     tags: ['tag 1', 'tag 2'],
   },
   {
+    id: '13',
     name: 'Books',
     description: 'Sci-fi and Fantasty',
     imageSrc:
@@ -49,6 +51,7 @@ const stacks = [
     tags: ['tag 2', 'tag 3'],
   },
   {
+    id: '14',
     name: 'Travel',
     description: 'Daily commute essentials',
     imageSrc:

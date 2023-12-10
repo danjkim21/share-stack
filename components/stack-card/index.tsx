@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface stackPropsInterface {
   stack: any;
 }
@@ -13,10 +15,10 @@ function StackCard({ stack }: stackPropsInterface) {
         />
       </div>
       <h3 className="mt-6 text-sm text-gray-500">
-        <a href={stack.href}>
+        <Link href={`stacks/${stack.id}`}>
           <span className="absolute inset-0" />
           {stack.name}
-        </a>
+        </Link>
       </h3>
       <p className="text-base font-semibold text-gray-900">
         {stack.description}
