@@ -26,7 +26,6 @@ const filters = [
     ],
   },
 ];
-
 const stacks = [
   {
     id: '12',

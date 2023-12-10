@@ -1,3 +1,4 @@
+import Badge, { BadgeType } from '@/components/badge';
 import { PaperClipIcon } from '@heroicons/react/24/outline';
 
 const product = {
@@ -8,43 +9,43 @@ const product = {
 export default function StackPage({ params }: { params: { stackId: string } }) {
   return (
     <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-      {/* BreadCrumb component */}
-      <ol role="list" className="mb-2 flex items-center space-x-2">
-        {product.breadcrumbs.map((breadcrumb) => (
-          <li key={breadcrumb.id}>
-            <div className="flex items-center">
-              <a
-                href={breadcrumb.href}
-                className="mr-2 text-sm font-medium text-gray-900"
-              >
-                {breadcrumb.name}
-              </a>
-              <svg
-                width={16}
-                height={20}
-                viewBox="0 0 16 20"
-                fill="currentColor"
-                aria-hidden="true"
-                className="h-5 w-4 text-gray-300"
-              >
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>
-            </div>
-          </li>
-        ))}
-        <li className="text-sm">
-          <a
-            href={product.href}
-            aria-current="page"
-            className="font-medium text-gray-500 hover:text-gray-600"
-          >
-            {product.name}
-          </a>
-        </li>
-      </ol>
-
-      {/* Stack Header */}
       <div className="px-4 sm:px-0">
+        {/* BreadCrumb component */}
+        <ol role="list" className="mb-2 flex items-center space-x-2">
+          {product.breadcrumbs.map((breadcrumb) => (
+            <li key={breadcrumb.id}>
+              <div className="flex items-center">
+                <a
+                  href={breadcrumb.href}
+                  className="mr-2 text-sm font-medium text-gray-900"
+                >
+                  {breadcrumb.name}
+                </a>
+                <svg
+                  width={16}
+                  height={20}
+                  viewBox="0 0 16 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-4 text-gray-300"
+                >
+                  <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                </svg>
+              </div>
+            </li>
+          ))}
+
+          {/* Stack Header */}
+          <li className="text-sm">
+            <a
+              href={product.href}
+              aria-current="page"
+              className="font-medium text-gray-500 hover:text-gray-600"
+            >
+              {product.name}
+            </a>
+          </li>
+        </ol>
         <h1 className="text-2xl font-semibold leading-7 text-gray-900">
           Stack Name
         </h1>
@@ -72,8 +73,8 @@ export default function StackPage({ params }: { params: { stackId: string } }) {
             <dt className="text-sm font-medium leading-6 text-gray-900">
               Tags
             </dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Tag 1, tag 2
+            <dd className="mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0">
+              <Badge type={BadgeType.INFO} label="Tag 1" />
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
