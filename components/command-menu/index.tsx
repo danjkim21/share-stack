@@ -1,16 +1,17 @@
 'use client';
 
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, RadioGroup, Transition } from '@headlessui/react';
 import {
   DocumentIcon,
   Square3Stack3DIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import { useEffect, useState, Fragment } from 'react';
+import CheckIcon from '../icons';
 
 interface CommandMenuInterfaceProps {}
 
-const objectType = [
+const commandType = [
   {
     name: 'Item',
     icon: DocumentIcon,
@@ -27,6 +28,7 @@ const objectType = [
 
 function CommandMenu({}: CommandMenuInterfaceProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(commandType[0]);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -34,6 +36,13 @@ function CommandMenu({}: CommandMenuInterfaceProps) {
 
   const openModal = () => {
     setIsOpen(true);
+  };
+
+  const handleCommand = async (formData: FormData) => {
+    console.log(formData.get('command'));
+    console.log(formData.get('selected[name]'));
+
+    closeModal();
   };
 
   useEffect(() => {
@@ -75,46 +84,79 @@ function CommandMenu({}: CommandMenuInterfaceProps) {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg border border-gray-200 bg-white text-left align-middle shadow-xl transition-all">
-                <form>
+                <form action={handleCommand}>
                   <div className="">
                     <input
                       className="focus:shadow-outline w-full appearance-none  border-transparent px-3 py-3 leading-tight text-gray-700 shadow ring-transparent focus:outline-none"
                       id="command"
+                      name="command"
                       type="text"
-                      placeholder="Create a ..."
+                      placeholder="Create a..."
                     />
                   </div>
 
-                  <div className="my-4">
-                    {objectType.map((item) => (
-                      <label
-                        key={item.name}
-                        htmlFor={item.name}
-                        className="mr-auto"
+                  <div className="mx-1 my-2">
+                    <RadioGroup
+                      value={selected}
+                      onChange={setSelected}
+                      name="selected"
+                    >
+                      <RadioGroup.Label
+                        className={
+                          'mb-2 block px-2 text-sm font-medium text-gray-700'
+                        }
                       >
-                        <div
-                          key={item.name}
-                          className="group relative mx-1 flex items-center gap-x-2 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
+                        Suggestions
+                      </RadioGroup.Label>
+                      {commandType.map((type) => (
+                        <RadioGroup.Option
+                          key={type.name}
+                          value={type}
+                          className={({ active, checked }) =>
+                            `
+                            ${active ? '' : ''}
+                  ${
+                    checked
+                      ? 'bg-sky-900/75 text-white hover:bg-sky-900/80'
+                      : 'bg-white'
+                  }
+                    relative flex cursor-pointer rounded-md px-2 py-2 hover:bg-gray-50 focus:outline-none`
+                          }
                         >
-                          <div className="flex h-6 w-8 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                            <item.icon
-                              className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                              aria-hidden="true"
-                            />
-                          </div>
-                          <div className="flex flex-auto items-center">
-                            {item.name}
-                            <input
-                              type="radio"
-                              id={item.name}
-                              name={item.name}
-                              className="ml-auto h-4
-                            w-4 border-gray-300 "
-                            />
-                          </div>
-                        </div>
-                      </label>
-                    ))}
+                          {({ active, checked }) => (
+                            <>
+                              <div className="flex w-full items-center justify-between">
+                                <div className="flex items-center gap-x-2">
+                                  <div
+                                    className={`flex h-6 w-8 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white`}
+                                  >
+                                    <type.icon
+                                      className="h-5 w-5 text-gray-600 group-hover:text-indigo-600"
+                                      aria-hidden="true"
+                                    />
+                                  </div>
+                                  <div className="text-sm">
+                                    <RadioGroup.Label
+                                      as="p"
+                                      className={`font-medium  ${
+                                        checked ? 'text-white' : 'text-gray-900'
+                                      }`}
+                                    >
+                                      {type.name}
+                                    </RadioGroup.Label>
+                                  </div>
+                                </div>
+                                {checked && (
+                                  <div className="shrink-0 text-white">
+                                    <CheckIcon className="h-6 w-6" />
+                                  </div>
+                                )}
+                              </div>
+                            </>
+                          )}
+                        </RadioGroup.Option>
+                      ))}
+                    </RadioGroup>
                   </div>
                 </form>
               </Dialog.Panel>
