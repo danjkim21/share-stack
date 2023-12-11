@@ -14,9 +14,7 @@ function GroupList({ groups }: GroupListPropsInterface) {
             <div className="min-w-0 flex-auto">
               <Link
                 // Add groups backend
-                href={`/groups/${groups.id}`}
-                target="_blank"
-                rel="noreferrer"
+                href={`/groups/${group.id}`}
                 className="text-sm font-semibold leading-6 text-gray-900 hover:underline"
               >
                 {group.groupName}

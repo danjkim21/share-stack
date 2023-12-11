@@ -5,6 +5,7 @@ import GroupList from '@/components/group-list';
 
 const groups = [
   {
+    id: '12',
     groupName: 'Group Name Test name goes here please 1',
     name: 'Leslie Alexander',
     email: 'leslie.alexander@example.com',
@@ -32,6 +33,7 @@ const groups = [
     ],
   },
   {
+    id: '13',
     groupName: 'Group Name Test name goes here please 2',
     name: 'Michael Foster',
     email: 'michael.foster@example.com',
@@ -59,6 +61,7 @@ const groups = [
     ],
   },
   {
+    id: '11',
     groupName: 'Group Name Test name goes here please 3',
     name: 'Dries Vincent',
     email: 'dries.vincent@example.com',
@@ -86,6 +89,7 @@ const groups = [
     ],
   },
   {
+    id: '15',
     groupName: 'Group Name Test name goes here please 4',
     name: 'Lindsay Walton',
     email: 'lindsay.walton@example.com',
@@ -113,6 +117,7 @@ const groups = [
     ],
   },
   {
+    id: '17',
     groupName: 'Group Name Test name goes here please 5',
     name: 'Courtney Henry',
     email: 'courtney.henry@example.com',
@@ -140,6 +145,7 @@ const groups = [
     ],
   },
   {
+    id: '18',
     groupName: 'Group Name Test name goes here please 6',
     name: 'Tom Cook',
     email: 'tom.cook@example.com',

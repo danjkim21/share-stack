@@ -28,6 +28,17 @@ const filters = [
 ];
 const stacks = [
   {
+    id: '1',
+    name: 'Music Recs',
+    description: 'Funky Beats and Rhymes',
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
+    imageAlt:
+      'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
+    href: '#',
+    tags: ['tag 2', 'tag 3'],
+  },
+  {
     id: '12',
     name: 'Tech & Gadgets',
     description: 'Work from home accessories',
