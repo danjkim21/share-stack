@@ -18,10 +18,10 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 };
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', current: true },
-  { name: 'Explorer', href: '/explorer', current: false },
-  { name: 'My Stacks', href: '/stacks', current: false },
-  { name: 'My Groups', href: '/groups', current: false },
+  { name: 'Dashboard', href: '/dashboard' },
+  { name: 'Explorer', href: '/explorer' },
+  { name: 'My Stacks', href: '/stacks' },
+  { name: 'My Groups', href: '/groups' },
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '/profile' },
@@ -31,11 +31,6 @@ const userNavigation = [
 
 function Nav() {
   const pathname = usePathname();
-
-  useEffect(() => {
-    // log pathname whenever page changes
-    console.log(pathname);
-  }, [pathname]);
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -54,12 +49,14 @@ function Nav() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current
+                          item.href === pathname
                             ? 'bg-gray-900 text-white'
                             : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={
+                          item.href === pathname ? 'page' : undefined
+                        }
                       >
                         {item.name}
                       </Link>
@@ -144,12 +141,12 @@ function Nav() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current
+                    item.href === pathname
                       ? 'bg-gray-900 text-white'
                       : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.href === pathname ? 'page' : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
