@@ -1,6 +1,6 @@
-import HeaderStacked from '@/components/header-stacked';
 import Nav from '@/components/nav';
 import '../styles/globals.css';
+import CommandMenu from '@/components/command-menu';
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -20,6 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Nav />
           {children}
         </div>
+        <CommandMenu />
       </body>
     </html>
   );
