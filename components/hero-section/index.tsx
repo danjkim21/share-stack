@@ -1,4 +1,4 @@
-export default function Header() {
+function HeroSection() {
   return (
     <div className="flex flex-col items-center gap-16">
       <div className="flex items-center justify-center gap-8">
@@ -16,3 +16,5 @@ export default function Header() {
     </div>
   );
 }
+
+export default HeroSection;

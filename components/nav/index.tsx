@@ -1,10 +1,11 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Logo from '../logo/Logo';
+import { usePathname } from 'next/navigation';
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ');
@@ -29,6 +30,13 @@ const userNavigation = [
 ];
 
 function Nav() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // log pathname whenever page changes
+    console.log(pathname);
+  }, [pathname]);
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -36,7 +44,7 @@ function Nav() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
-                <div className="flex-shrink-0">
+                <div className="w-32 flex-shrink-0">
                   <Logo />
                 </div>
                 <div className="hidden md:block">
