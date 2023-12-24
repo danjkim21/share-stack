@@ -1,7 +1,7 @@
 import { createClient } from '@/utils/supabase/server';
 import { cookies } from 'next/headers';
 import HeaderStacked from '@/components/header-stacked';
-import StackList from '@/components/stack-list';
+import StackList from '@/app/(app-ui)/stacks/components/stack-list';
 
 export default async function Stacks() {
 	const cookieStore = cookies();

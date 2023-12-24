@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { FunnelIcon } from '@heroicons/react/20/solid';
 import StackCard from '../stack-card';
-import FilterDialogMobile from '../filter-dialog-mobile';
-import FilterSidePanel from '../filter-side-panel';
+import FilterDialogMobile from '../../../../../components/filter-dialog-mobile';
+import FilterSidePanel from '../../../../../components/filter-side-panel';
 
 const subCategories = [
 	{ name: 'Totes', href: '#' },

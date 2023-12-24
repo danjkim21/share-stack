@@ -1,7 +1,7 @@
 import { createClient } from '@/utils/supabase/server';
 import { cookies } from 'next/headers';
 import HeaderStacked from '@/components/header-stacked';
-import GroupList from '@/components/group-list';
+import GroupList from '@/app/(app-ui)/groups/components/group-list';
 
 const groups = [
 	{

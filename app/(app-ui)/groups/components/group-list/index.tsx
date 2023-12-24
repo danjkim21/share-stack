@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import AvatarGroup from '../avatar-group';
+import AvatarGroup from '../../../../../components/avatar-group';
 
 interface GroupListPropsInterface {
 	groups: any;
