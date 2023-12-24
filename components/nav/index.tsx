@@ -40,7 +40,11 @@ function Nav() {
 						<div className="flex h-16 items-center justify-between">
 							<div className="flex items-center">
 								<div className="w-32 flex-shrink-0">
-									<Logo />
+									<Link href={`/dashboard`}>
+										<div className="flex items-center">
+											<Logo />
+										</div>
+									</Link>
 								</div>
 								<div className="hidden md:block">
 									<div className="ml-10 flex items-baseline space-x-4">
